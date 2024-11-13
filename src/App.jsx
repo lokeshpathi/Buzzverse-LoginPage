@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import banner from './assets/Group.png'
+import banner from './assets/Frame.png'
 import './App.css'
 import { FcGoogle } from "react-icons/fc";
+import { BsLinkedin } from "react-icons/bs";
 
 function App() {
   const [login, setLogin] = useState(true)
@@ -9,8 +10,12 @@ function App() {
 
   return (
     <div className='h-screen w-full flex font-bold'>
-        <div className='hidden md:block flex-[3]'>
+        <div className=' relative hidden md:block flex-[3]'>
           <img src={banner} alt="banner" className='h-screen w-full bg-cover'/>
+          <div className='absolute font-poppinsBold top-[43%] right-[5%]'>
+            <h1 className='text-5xl text-white'>BUZZVERSE</h1>
+            <p className='text-xl font-poppinsBold font-medium text-white'>The very first to connect talents to brands.</p>
+          </div>
         </div>
 
         <div className='flex-[2] flex flex-col justify-center items-center'>
@@ -68,14 +73,14 @@ function App() {
           </div>
 
                 {login ? (
-                      <div className="mt-[25px] w-[260px]">
+                      <div className=" font-poppinsBold mt-[25px] w-[260px]">
                         <button
                           className="py-2 w-full mt-[15px] text-xl text-white rounded-3xl font-normal border border-solid borderColor"
                           style={{ backgroundColor: "rgba(43, 43, 43, 1)" }}
                         >
                           Login
                         </button>
-                        <p style={{ color: "rgba(51, 51, 51, 1)" }} className="text-center font-normal mt-[8px]">
+                        <p style={{ color: "rgba(51, 51, 51, 1)" }} className="cursor-pointer text-center font-normal hover:opacity-45 mt-[8px]">
                           Forgot Password
                         </p>
                       </div>
@@ -91,19 +96,22 @@ function App() {
                )}
 
 
-          <div className=' w-[310px]' style={{fontFamily:"sansationregular"}}>
+          <div className='font-poppinsBold w-[330px]'>
             {login?<p style={{color: "rgba(51, 51, 51, 1)"}} className='mb-[20px] text-center font-normal mt-[12px]'>Don't have an account? <span onClick={()=>setLogin(prev=>!prev)} className=' cursor-pointer font-bold text-black'>Sign Up</span> here.</p>
               :<p style={{color: "rgba(51, 51, 51, 1)"}} className='mb-[20px] text-center font-normal mt-[12px]'>Already have an account? <span onClick={()=>setLogin(prev=>!prev)} className=' cursor-pointer font-bold text-black'>Login</span> here.</p>}
               
               <button
-                  className=' py-2 w-full mt-[10px] text-xl text-white rounded-3xl font-normal
+                  className=' relative py-2 w-full mt-[10px] text-xl text-white rounded-3xl font-normal hover:shadow-md
                   border border-solid borderColor' style={{backgroundColor:"rgba(24, 119, 242, 1)"}}>
+                    <div className='absolute top-[10px] left-4'>
+                    <BsLinkedin size={24}/> 
+                </div>
                     Continue with Linkedin
               </button>
               
               <button
                   className='relative py-2 w-full mt-[15px] text-xl rounded-3xl font-normal
-                  border border-solid borderColor shadow-md' style={{color:" rgba(0, 0, 0, 0.54)"}}>
+                  border border-solid borderColor hover:shadow-md' style={{color:" rgba(0, 0, 0, 0.54)"}}>
                 <div className='absolute top-2 left-3'>
                 <FcGoogle size={28}/> 
                 </div>   
