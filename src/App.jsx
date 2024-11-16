@@ -9,19 +9,19 @@ function App() {
   const [user,setUser] = useState("Brand");
 
   return (
-    <div className='h-screen w-full flex font-bold'>
-        <div className=' relative hidden md:block flex-[3]'>
+    <div className='relative h-screen w-full flex font-bold'>
+        <div className='absolute md:relative md:block flex-[3]'>
           <img src={banner} alt="banner" className='h-screen w-full bg-cover'/>
-          <div className='absolute font-poppinsBold top-[43%] right-[5%]'>
+          <div className='hidden md:block absolute font-poppinsBold top-[43%] right-[5%]'>
             <h1 className='md:text-[40px] lg:text-5xl text-white'>BUZZVERSE</h1>
             <p className='md:text-[17px] lg:md:text-xl font-poppinsBold font-medium text-white'>The very first to connect talents to brands.</p>
           </div>
         </div>
 
-        <div className='flex-[2] flex flex-col justify-center items-center'>
+        <div className=' z-20 flex-[2] flex flex-col justify-center items-center'>
           <div>
-            <h2 className='font-poppinsBold font-bold text-[19px] md:text-[22px] lg:text-2xl'>{login?"Hello, Again!":"Hello!"}</h2>
-            <p className='font lg:text-[17px] md:text-[16px] text-[14px] '>{login?"Welcome Back":"Sign Up to Get Started"}</p>
+            <h2 className='text-white md:text-black font-poppinsBold font-bold text-[19px] md:text-[22px] lg:text-2xl'>{login?"Hello, Again!":"Hello!"}</h2>
+            <p className='font text-white lg:text-[17px] md:text-[16px] text-[14px] '>{login?"Welcome Back":"Sign Up to Get Started"}</p>
           </div>
 
           <div className='mt-[24px] md:mt-[30px]'>
